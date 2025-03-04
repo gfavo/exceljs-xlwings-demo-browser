@@ -12,4 +12,9 @@ async function manipulateXlsx() {
     const worksheet = workbook.getWorksheet('Worksheet1');
 
     worksheet.getCell('B1').value = 'John Doe';
+
+    const wbBuffer = await workbook.xlsx.writeBuffer();
+    const wbBlob = new Blob([wbBuffer], {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"});
+
+    saveAs(wbBlob, 'files/newFIle.xlsx');
 }
