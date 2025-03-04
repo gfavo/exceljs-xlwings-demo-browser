@@ -8,4 +8,8 @@ async function manipulateXlsx() {
     const buffer = await blob.arrayBuffer();
 
     await workbook.xlsx.load(buffer);
+
+    const worksheet = workbook.getWorksheet('Worksheet1');
+
+    worksheet.getCell('B1').value = 'John Doe';
 }
