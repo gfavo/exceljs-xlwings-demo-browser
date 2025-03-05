@@ -16,5 +16,5 @@ async function manipulateXlsx() {
     const wbBuffer = await workbook.xlsx.writeBuffer();
     const wbBlob = new Blob([wbBuffer], {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"});
 
-    saveAs(wbBlob, 'files/newFIle.xlsx');
+    saveAs(wbBlob, 'newFIle.xlsx');
 }
